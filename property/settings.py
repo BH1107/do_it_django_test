@@ -39,7 +39,7 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
-    "Django",
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -63,7 +63,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "allauth.account.middkeware.AccountMiddleware"
+    "allauth.account.middleware.AccountMiddleware"
 ]
 
 SITE_ID = 1
@@ -100,7 +100,7 @@ WSGI_APPLICATION = "property.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('POSTGRES_ENGINE', ' django.db.backends.sqlite3'),
+        'ENGINE': os.environ.get('POSTGRES_ENGINE', 'django.db.backends.sqlite3'),
         'NAME': os.environ.get('POSTGRES_DB_NAME', 'postgres'),
         'USER': os.getenv('POSTGRES_USER', 'user'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'password'),
